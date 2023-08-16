@@ -1,0 +1,134 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: green;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*pointer-events: none;*//* cursor will not change on context*/
+  scroll-behavior: smooth; /* Transition smoothly using page scroll
+                           * like with HTML # ids */
+  box-sizing: border-box;
+}
+
+.text-gradient-animated {
+  background: linear-gradient(75deg, #00c592, #0022c5, #c5006a, #c55500, #c5b500, #42c500, #0081c5, #6100c5);
+  background-size: 1600% 1600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -text-fill-color: transparent;
+  background-clip: transparent;
+
+  -webkit-animation: AnimationName 8s ease infinite;
+  -moz-animation: AnimationName 8s ease infinite;
+  -o-animation: AnimationName 8s ease infinite;
+  animation: AnimationName 8s ease infinite;
+}
+
+.background-animation-gradient {
+    background: linear-gradient(151deg, #00c592, #0022c5, #c5006a, #c55500, #c5b500, #42c500, #0081c5, #6100c5);
+    background-size: 1600% 1600%;
+
+    -webkit-animation: AnimationName 16s ease infinite;
+    -moz-animation: AnimationName 16s ease infinite;
+    -o-animation: AnimationName 16s ease infinite;
+    animation: AnimationName 16s ease infinite;
+}
+
+/* combine text gradient and background gradient animations
+ * in order to create a wash-over, nearly-drowning sort of
+ * effect, especially with adjusting the timings. */
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:2% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:2% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:2% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:2% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:2% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:2% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:2% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:2% 0%}
+}
+  
+@keyframes fade {
+  0% {
+    
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.container {
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin: 0 auto;
+}
+
+.container .box {
+  min-width: 20rem;
+  display: flex-box;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large; 
+  color: white;
+  scroll-snap-align: center;
+}
+
+.text-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background: darkgrey;
+  min-height: fit-content;
+  gap: 24px;
+  margin-top: 24px;
+  overflow: auto;
+  resize: both;
+}
+
+.text-box {
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg,brown, purple, pink, purple, brown);
+  background-position: -50% 0%;
+  background-size: 200%;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.live-link {
+  transition: all 0.5s linear;
+}
+
+.live-link:target {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 0px;
+  background-position: 50% 0%;
+  /*background-color: brown;*/
+  transition: all 0.5s linear;
+}
